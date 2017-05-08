@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}{% load static %}
+
+{% block title %}
+  {{page_title}}
+{% endblock %}
+
+{% block content %}
+  <h2>
+    {% if name == 'JJ Spetseris'%}
+      <ul>
+        {% for n in reply %}
+          <li>{{n}}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{name}}
+    {% endif %}
+
+  </h2>
+  <img src="{% static "img/download.jpeg" %}" alt="">
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Hello World{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+  <header>
+    It's a header.
+    <a href={% url 'homepage'%}>Homepage</a>
+  </header>
+  <main>
+
+
+      {% block content %}
+
+
+
+
+      {% endblock %}
+      </main>
+      <footer>
+        It's a footer
+      </footer>
+  <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
