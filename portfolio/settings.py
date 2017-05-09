@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '45.32.192.195',
     'localhost',
+    'www.jjspetseris.com',
+    'jjspetseris.com',
     ]
 
 
