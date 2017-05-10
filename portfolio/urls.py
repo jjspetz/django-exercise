@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^about$', webpage.views.about, name='about'),
     url(r'^work$', webpage.views.work, name='work'),
     url(r'^resume$', webpage.views.resume, name='resume'),
+    url(r'^contact$', webpage.views.contact, name='contact'),
+    url(r'^thanks$', webpage.views.thankyou, name='thanks'),
 ]

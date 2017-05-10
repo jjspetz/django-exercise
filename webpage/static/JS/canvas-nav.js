@@ -107,5 +107,4 @@ window.onload = function() {
 
   init();
   animate();
-  $('#nav').css('z-index', '10000')
 }

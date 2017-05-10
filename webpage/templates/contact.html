@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Me
+{% endblock %}
+
+{% block content %}
+  <h3 style="margin-top: 5em"> Send an Email:</h3>
+  <br>
+  <form action="/contact" method="POST" style="margin-top: 1em">
+      {% csrf_token %}
+      <p>
+        {{form.name.label}}
+        {{form.name}}
+      </p>
+      <br>
+      <p>
+        {{form.email.label}}
+        {{form.email}}
+      </p>
+      <br>
+      <p>
+        {{form.question.label}}
+      </p>
+      <p>
+        {{form.question}}
+      </p>
+      <input type="submit">
+</form>
+{% endblock %}
