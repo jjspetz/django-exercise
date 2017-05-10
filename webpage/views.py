@@ -26,11 +26,12 @@ def resume (request):
     return TemplateResponse(request, 'resume.html', context)
 def contact (request):
     contact_form  = forms.ContactMeForm(request.POST or None)
+
     if request.method == 'POST':
         if contact_form.is_valid():
             send_mail(
                 'A message from ' + contact_form.cleaned_data['name'],
-                contact_form.cleaned_data['question'] + '/n' + contact_form.cleaned_data['email'],
+                contact_form.cleaned_data['question'] + '\n' + contact_form.cleaned_data['email'],
                 'grofter@yahoo.com',
                 ['grofter@yahoo.com'],
                 fail_silently=False,
