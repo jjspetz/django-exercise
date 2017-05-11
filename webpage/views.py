@@ -33,7 +33,7 @@ def contact (request):
                 'A message from ' + contact_form.cleaned_data['name'],
                 contact_form.cleaned_data['question'] + '\n' + contact_form.cleaned_data['email'],
                 'grofter@yahoo.com',
-                ['trajwani@gmail.com', 'jj.spetseris@yahoo.com'],
+                ['grofter@yahoo.com'],
                 fail_silently=False,
             )
             return http.HttpResponseRedirect('/thanks')
