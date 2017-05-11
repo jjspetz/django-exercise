@@ -89,3 +89,5 @@ ENV/
 .ropeproject
 
 SECRETS.ENV
+db.sqlite3
+
