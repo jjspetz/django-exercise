@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 import webpage.views
+import blog.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,4 +27,5 @@ urlpatterns = [
     url(r'^resume$', webpage.views.resume, name='resume'),
     url(r'^contact$', webpage.views.contact, name='contact'),
     url(r'^thanks$', webpage.views.thankyou, name='thanks'),
+    url(r'^blog/(\S+)/$', blog.views.blog_index),
 ]

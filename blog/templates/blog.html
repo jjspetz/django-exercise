@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{blog.name}}
+{% endblock %}
+
+{% block content %}
+<ul style="margin-top: 7em">
+  {% for post in posts %}
+    <li>
+        {{post.title}}: {{post.created}}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
