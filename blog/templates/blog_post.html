@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{post.blog.name}} - {{post.title}}
+{% endblock %}
+
+{% block content %}
+  <h1 style="margin-top: 7em">
+    {{post.title}}
+  </h1>
+  <p>
+    {{post.body | linebreaksbr }}
+  </p>
+{% endblock %}

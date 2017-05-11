@@ -25,3 +25,36 @@ class Post(models.Model):
 
   def __str__ (self):
       return self.title
+
+class Poll(models.Model):
+    question = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.slug
+
+class Choice(models.Model):
+    poll = models.ForeignKey(Poll)
+
+    PEPPERONI = 'pepperoni'
+    MUSHROOMS = 'mushrooms'
+    ONIONS = 'onions'
+    SUASAGE = 'sausage'
+    OLIVES = 'olives'
+    PEPPERS = 'bell peppers'
+    CHEESE = 'cheese'
+    BEST_TOPPING = (
+        (PEPPERONI, 'pepperoni'),
+        (MUSHROOMS, 'mushrooms'),
+        (ONIONS, 'onions'),
+        (SUASAGE, 'sausage'),
+        (OLIVES, 'olives'),
+        (PEPPERS, 'bell peppers'),
+        (CHEESE, 'cheese'),
+    )
+    answer = models.CharField(
+        max_length = 50,
+        choices = BEST_TOPPING,
+        default = CHEESE,
+    )
+    votes = models.IntegerField(default=0)

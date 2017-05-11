@@ -8,7 +8,9 @@
 <ul style="margin-top: 7em">
   {% for post in posts %}
     <li>
+      <a href="./{{post.slug}}">
         {{post.title}}: {{post.created}}
+      </a>
     </li>
   {% endfor %}
 </ul>

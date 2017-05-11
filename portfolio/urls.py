@@ -27,5 +27,8 @@ urlpatterns = [
     url(r'^resume$', webpage.views.resume, name='resume'),
     url(r'^contact$', webpage.views.contact, name='contact'),
     url(r'^thanks$', webpage.views.thankyou, name='thanks'),
+    url(r'^blog/(\S+)/(\S+)/$', blog.views.blog_post),
     url(r'^blog/(\S+)/$', blog.views.blog_index),
+    url(r'^poll/(\S+)/$', blog.views.poll),
+
 ]
