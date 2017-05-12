@@ -23,14 +23,12 @@ def blog_post(request, blog_slug, post_slug):
 def poll(request, poll_slug):
     poll = get_object_or_404(Poll, slug=poll_slug)
     answers = Choice.objects.filter(poll=poll)
-    print(answers)
 
     form = forms.PizzaPoll(request.POST or None)
 
     if request.method == 'POST':
         if form.is_valid():
             for answer in answers:
-                print(answer)
                 if answer.answer == form.cleaned_data['choice']:
                     answer.votes += 1
                     answer.save()
