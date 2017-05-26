@@ -9,7 +9,7 @@ VENV = 'source /home/jjspetz/.virtualenvs/dj-exercise/bin/activate && source SEC
 def start ():
   with cd(DIR):
     with prefix(VENV):
-      run('pm2 start uwsgi -- --ini uwsgi.ini > start.log')
+      run('pm2 start `which uwsgi` -- --ini uwsgi.ini > start.log')
 
 def stop ():
   run('pm2 stop all > stop.log')
@@ -22,6 +22,6 @@ def deploy ():
       run('pip install -r requirements.txt  > install.log')
 
     run('pm2 restart all > restart.log')
- 
+
 def hello ():
   print("Hello")
